@@ -110,3 +110,8 @@ GET tasks/27로 요청했다면 27가 할당된다.
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+
+Route::group(['prefix' => 'admin'], function () {
+    Voyager::routes();
+});
